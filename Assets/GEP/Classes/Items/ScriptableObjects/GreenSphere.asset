@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c068ed8312ea454883adb15e4c593fb, type: 3}
-  m_Name: GreyBox
+  m_Name: GreenSphere
   m_EditorClassIdentifier: 
-  itemName: Grey
-  icon: {fileID: 21300000, guid: 1c22486cbfb24144ab8fb58ebf8ca732, type: 3}
-  quantity: 1
+  itemName: Green
+  icon: {fileID: 21300000, guid: 177df98a6be101a4c842a5d1cbe94a07, type: 3}
+  quantity: 0

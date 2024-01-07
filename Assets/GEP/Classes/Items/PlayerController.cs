@@ -26,12 +26,12 @@ public class PlayerController : MonoBehaviour
 
     public void PickUpItem(Item item)
     {
-        playerInventory.AddItem(item);
+        playerInventory.AddItem(item,item.quantity);
     }
 
     // Example function for using an item
     public void UseItem(Item item)
     {
-        playerInventory.RemoveItem(item);
+        playerInventory.RemoveItem(item, item.quantity);
     }
 }

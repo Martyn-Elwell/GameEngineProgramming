@@ -1,11 +1,25 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using Text = TMPro.TextMeshProUGUI;
+
+
+[Serializable]
+public class InventoryItem
+{
+    public Item item;
+    public int quantity;
+}
 
 public class Inventory : MonoBehaviour
 {
-    public List<Item> items = new List<Item>();
+    public List<InventoryItem> items = new List<InventoryItem>();
     public GameObject inventoryUI;
+
+    public Transform content;
+    public GameObject slot;
 
     public void Update()
     {
@@ -16,6 +30,7 @@ public class Inventory : MonoBehaviour
             if (inventoryUI.activeSelf )
             {
                 Cursor.lockState = CursorLockMode.None;
+                UpdateInventoryUI();
             }
             else
             {
@@ -24,32 +39,55 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void AddItem(Item item)
+    public void AddItem(Item item, int quantity)
     {
-        Item existingItem = items.Find(i => i.itemName == item.itemName);
+        InventoryItem existingItem = items.Find(i => i.item == item);
 
         if (existingItem != null)
         {
-            existingItem.quantity += item.quantity;
+            existingItem.quantity += quantity;
         }
         else
         {
-            items.Add(item);
+            items.Add(new InventoryItem { item = item, quantity = quantity });
         }
+        UpdateInventoryUI();
     }
 
-    public void RemoveItem(Item item)
+    public void RemoveItem(Item item, int quantity)
     {
-        Item existingItem = items.Find(i => i.itemName == item.itemName);
+        InventoryItem existingItem = items.Find(i => i.item == item);
 
         if (existingItem != null)
         {
-            existingItem.quantity -= item.quantity;
+            existingItem.quantity -= quantity;
 
             if (existingItem.quantity <= 0)
             {
                 items.Remove(existingItem);
             }
+        }
+    }
+
+    public void UpdateInventoryUI()
+    {
+        //Clean before opening
+        foreach (Transform item in content)
+        {
+            Destroy(item.gameObject);
+        }
+        foreach (var inv in items)
+        {
+            GameObject obj = Instantiate(slot, content);
+            var itemName = obj.transform.Find("Text").GetComponent<Text>();
+            var itemImage = obj.transform.Find("Image").GetComponent<Image>();
+            var itemCount = obj.transform.Find("Count").GetComponent<Text>();
+
+            itemName.text = inv.item.itemName;
+            itemImage.sprite = inv.item.icon;
+            if (inv.quantity > 1) { itemCount.text = inv.quantity.ToString(); }
+            else { itemCount.text = ""; }
+
         }
     }
 }
