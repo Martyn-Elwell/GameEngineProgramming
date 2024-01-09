@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5084178289900412263
 RectTransform:
   m_ObjectHideFlags: 0
@@ -408,6 +408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4312595128938626036}
   - component: {fileID: 1006344331654490569}
+  - component: {fileID: 3902981100435574577}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -432,7 +433,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1006344331654490569
 MonoBehaviour:
@@ -448,6 +449,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
+--- !u!114 &3902981100435574577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2124258467336149389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 10
+    m_Right: 10
+    m_Top: 10
+    m_Bottom: 10
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 135, y: 135}
+  m_Spacing: {x: 10, y: 10}
+  m_Constraint: 0
+  m_ConstraintCount: 2
 --- !u!1 &2824830272535712208
 GameObject:
   m_ObjectHideFlags: 0
@@ -600,7 +625,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6115627738356900831
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1091,7 +1116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &6581441428598735663
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1182,7 +1207,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7555285498739268663
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2251,6 +2276,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6827758832606258990}
     m_Modifications:
+    - target: {fileID: 222592500119061331, guid: 170fe157b78219e4c999e24d74afd358,
+        type: 3}
+      propertyPath: slotID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6719829170408474459, guid: 170fe157b78219e4c999e24d74afd358,
         type: 3}
       propertyPath: m_Name
@@ -2505,6 +2535,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1614813509530553158}
     m_Modifications:
+    - target: {fileID: 2975093067072642024, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_text
+      value: Electric Slash
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544327475793131675, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 44592b265c9ab2a40a385a499d5665c3,
+        type: 3}
     - target: {fileID: 6719829170408474459, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
         type: 3}
       propertyPath: m_Name
@@ -3164,6 +3205,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1614813509530553158}
     m_Modifications:
+    - target: {fileID: 2975093067072642024, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_text
+      value: Power Orb
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544327475793131675, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6ace3296737f2ff4ba745550b5a12c0a,
+        type: 3}
     - target: {fileID: 6719829170408474459, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
         type: 3}
       propertyPath: m_Name
@@ -3288,6 +3340,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1614813509530553158}
     m_Modifications:
+    - target: {fileID: 2975093067072642024, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_text
+      value: Temporal Portal
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544327475793131675, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 932fda61a65a7414e8b9d3c4ef1646a0,
+        type: 3}
     - target: {fileID: 6719829170408474459, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
         type: 3}
       propertyPath: m_Name
@@ -3412,6 +3475,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6827758832606258990}
     m_Modifications:
+    - target: {fileID: 222592500119061331, guid: ecbe0b9deafd82e41ac5bb439eee26de,
+        type: 3}
+      propertyPath: slotID
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6719829170408474459, guid: ecbe0b9deafd82e41ac5bb439eee26de,
         type: 3}
       propertyPath: m_Name
@@ -3536,6 +3604,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1614813509530553158}
     m_Modifications:
+    - target: {fileID: 2975093067072642024, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_text
+      value: Energy Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544327475793131675, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 5085c1e003e46ec43810e5e3add1e9f0,
+        type: 3}
     - target: {fileID: 6719829170408474459, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
         type: 3}
       propertyPath: m_Name
@@ -4080,6 +4159,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6827758832606258990}
     m_Modifications:
+    - target: {fileID: 222592500119061331, guid: 479188f45dfa46646bd9919b59b7a7d6,
+        type: 3}
+      propertyPath: slotID
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 6719829170408474459, guid: 479188f45dfa46646bd9919b59b7a7d6,
         type: 3}
       propertyPath: m_Name
@@ -4356,6 +4440,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1614813509530553158}
     m_Modifications:
+    - target: {fileID: 2975093067072642024, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_text
+      value: Frost Aura
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544327475793131675, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7fb99c89177c0e04cb53ba5431a5d487,
+        type: 3}
     - target: {fileID: 6719829170408474459, guid: e1e61b4579ccbd14a88603ee21bb4f7e,
         type: 3}
       propertyPath: m_Name
@@ -4480,6 +4575,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6827758832606258990}
     m_Modifications:
+    - target: {fileID: 222592500119061331, guid: a36429b01e72b9b4fbafd7fbace4dc1a,
+        type: 3}
+      propertyPath: slotID
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6719829170408474459, guid: a36429b01e72b9b4fbafd7fbace4dc1a,
         type: 3}
       propertyPath: m_Name
@@ -4604,6 +4704,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6827758832606258990}
     m_Modifications:
+    - target: {fileID: 222592500119061331, guid: 17b27c3bd4d0ec0448200cfa722a33fb,
+        type: 3}
+      propertyPath: slotID
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6719829170408474459, guid: 17b27c3bd4d0ec0448200cfa722a33fb,
         type: 3}
       propertyPath: m_Name

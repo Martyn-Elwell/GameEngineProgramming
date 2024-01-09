@@ -361,6 +361,9 @@ MonoBehaviour:
   item: {fileID: 0}
   quantity: 0
   inventoryReference: {fileID: 0}
+  slot: 1
+  slotID: 3
+  slotType: 3
 --- !u!114 &5914382586294028080
 MonoBehaviour:
   m_ObjectHideFlags: 0
