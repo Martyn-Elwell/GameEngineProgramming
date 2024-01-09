@@ -81,9 +81,16 @@ public class Inventory : MonoBehaviour
     public void DropItem(Item item, int quantity)
     {
         Debug.Log("Dropping item");
+        bool inSlot = false;
         InventoryItem existingItem = items.Find(i => i.item == item);
 
-        if (existingItem != null)
+        if (existingItem = slotItems.Find(i => i.item == item))
+        {
+            inSlot = true;
+
+        }
+
+        if (existingItem != null && !inSlot)
         {
             existingItem.quantity -= quantity;
 
@@ -91,9 +98,16 @@ public class Inventory : MonoBehaviour
             {
                 items.Remove(existingItem);
             }
+            
         }
         Vector3 spawnPosition = transform.position + transform.forward * 2.0f + transform.up;
         Instantiate(existingItem.item.prefab, spawnPosition, Quaternion.identity);
+        if (inSlot)
+        {
+            slotItems[existingItem.slotID].item = null;
+            selectedItem = null;
+            selectedSlot = null;
+        }
         UpdateInventoryUI();
     }
 
@@ -128,6 +142,10 @@ public class Inventory : MonoBehaviour
         // Move the item to the selected empty slot
         if (selectedSlot != null)
         {
+            if (selectedSlot.item != null)
+            {
+                AddItem(selectedSlot.item, 1);
+            }
             if (selectedSlot.slotType == selectedItem.item.type)
             {
                 selectedSlot.item = selectedItem.item;

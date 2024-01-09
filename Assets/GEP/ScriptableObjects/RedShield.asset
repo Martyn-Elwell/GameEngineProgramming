@@ -17,5 +17,5 @@ MonoBehaviour:
   colour: 0
   type: 3
   icon: {fileID: 21300000, guid: 28a951eb69252c447a03d8d4ee149312, type: 3}
-  prefab: {fileID: 0}
+  prefab: {fileID: 2905182034135623299, guid: df55ddea502ab3e4cbe48b2caa37ef9a, type: 3}
   quantity: 1

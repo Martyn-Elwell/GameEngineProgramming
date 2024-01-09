@@ -49,7 +49,7 @@ public class InventoryItem : MonoBehaviour, IPointerClickHandler
         else if (eventData.button == PointerEventData.InputButton.Right)
         {
             //Right click"
-            inventoryReference.DropItem(item, 1);
+            if (item != null) { inventoryReference.DropItem(item, 1); }
         }
     }
 }
