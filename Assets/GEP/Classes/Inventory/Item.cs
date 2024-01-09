@@ -19,6 +19,7 @@ public enum Colour
 public enum Type
 {
     Gem,
+    Useable,
     Sword,
     Shield,
     Chestplate,
