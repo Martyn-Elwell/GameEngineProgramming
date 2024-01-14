@@ -46,6 +46,7 @@ public class Inventory : MonoBehaviour
 
     public void AddItem(Item item, int quantity)
     {
+        // Adds Item from Inventory
         InventoryItem existingItem = items.Find(i => i.item == item);
 
         if (existingItem != null)
@@ -64,6 +65,7 @@ public class Inventory : MonoBehaviour
 
     public void RemoveItem(Item item, int quantity)
     {
+        // Removes Item from Inventory
         InventoryItem existingItem = items.Find(i => i.item == item);
 
         if (existingItem != null)
@@ -80,16 +82,23 @@ public class Inventory : MonoBehaviour
 
     public void DropItem(Item item, int quantity)
     {
-        Debug.Log("Dropping item");
         bool inSlot = false;
         InventoryItem existingItem = items.Find(i => i.item == item);
 
+        // Checks if Item in Item Slot
         if (existingItem = slotItems.Find(i => i.item == item))
         {
             inSlot = true;
-
+        }
+        //Removes Item from Item slot
+        if (inSlot)
+        {
+            slotItems[existingItem.slotID].item = null;
+            selectedItem = null;
+            selectedSlot = null;
         }
 
+        // Removes Item from Inventory
         if (existingItem != null && !inSlot)
         {
             existingItem.quantity -= quantity;
@@ -100,20 +109,17 @@ public class Inventory : MonoBehaviour
             }
             
         }
+
+        // Spawn Gameworld Object
         Vector3 spawnPosition = transform.position + transform.forward * 2.0f + transform.up;
         Instantiate(existingItem.item.prefab, spawnPosition, Quaternion.identity);
-        if (inSlot)
-        {
-            slotItems[existingItem.slotID].item = null;
-            selectedItem = null;
-            selectedSlot = null;
-        }
+        
         UpdateInventoryUI();
     }
 
     public void UseItem(Item item, int quantity)
     {
-        Debug.Log("Using item");
+        // Use Item if useable
         InventoryItem existingItem = items.Find(i => i.item == item);
 
         if (existingItem != null)
@@ -174,6 +180,7 @@ public class Inventory : MonoBehaviour
 
     public void SelectItem(InventoryItem inventoryItem)
     {
+        // Selects Item from inventory
         selectedItem = items.Find(i => i.item == inventoryItem.item);
         Debug.Log("Selected item");
         if (selectedSlot != null)
@@ -188,7 +195,7 @@ public class Inventory : MonoBehaviour
 
     public void SelectSlot(InventoryItem emptySlot, int slotID)
     {
-
+        // Selects Item Slot
         selectedSlot = slotItems[slotID];
         Debug.Log("Selected slot");
         if (selectedItem != null)

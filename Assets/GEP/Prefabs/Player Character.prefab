@@ -1966,6 +1966,7 @@ GameObject:
   - component: {fileID: 3607001370336250099}
   - component: {fileID: 3022629894984781176}
   - component: {fileID: 4174508469755562980}
+  - component: {fileID: 6003493037057686974}
   m_Layer: 8
   m_Name: Player Character
   m_TagString: Player
@@ -2274,7 +2275,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  slotItems: []
+  currentCraftingItems: []
+  craftingRecipes: []
   inventoryUI: {fileID: 0}
+  selectedItem: {fileID: 0}
+  selectedSlot: {fileID: 0}
+  content: {fileID: 0}
+  slot: {fileID: 0}
 --- !u!114 &4174508469755562980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2294,6 +2302,26 @@ MonoBehaviour:
   analogMovement: 0
   cursorLocked: 1
   cursorInputForLook: 1
+--- !u!114 &6003493037057686974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7225226454402747168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d48981a8255cb7d4b8c6694bd33cccfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilities:
+  - {fileID: 161766660727748596, guid: 05ce920d629922a4eb4795ef7494ce5c, type: 3}
+  - {fileID: 3992058561654064293, guid: 13c990b8270c70b4c9f196019286028c, type: 3}
+  - {fileID: 1171201465392465800, guid: 4aa9f30a28a77224ba84b2a2c334c71b, type: 3}
+  - {fileID: 8378648546881499446, guid: 867c572a5be680d42a042d2349f10143, type: 3}
+  - {fileID: 6424583148328831481, guid: d2ffbc8b168cdf74a9dbb7c6c1cfdf2f, type: 3}
+  abilitiesEnabled: 0101010101
+  raycastDistance: 50
 --- !u!1 &7298392507975684595
 GameObject:
   m_ObjectHideFlags: 0
