@@ -14,15 +14,17 @@ using Text = TMPro.TextMeshProUGUI;
 public class Inventory : MonoBehaviour
 {
     public List<InventoryItem> items = new List<InventoryItem>();
+    public GameObject inventoryUI;
+    public Transform content;
+    public GameObject slot;
+
     public List<InventoryItem> slotItems = new List<InventoryItem>();
     public List<InventoryItem> currentCraftingItems = new List<InventoryItem>();
     public List<CraftingRecipe> craftingRecipes = new List<CraftingRecipe>();
-    public GameObject inventoryUI;
     public InventoryItem selectedItem;
     public InventoryItem selectedSlot;
 
-    public Transform content;
-    public GameObject slot;
+    
 
     public void Update()
     {
