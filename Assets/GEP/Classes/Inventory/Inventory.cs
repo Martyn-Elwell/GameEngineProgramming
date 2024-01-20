@@ -88,7 +88,7 @@ public class Inventory : MonoBehaviour
         bool inSlot = false;
         InventoryItem existingItem = items.Find(i => i.item == item);
 
-        // Checks if Item in Item Slot
+        /*// Checks if Item in Item Slot
         if (existingItem = slotItems.Find(i => i.item == item))
         {
             inSlot = true;
@@ -99,7 +99,7 @@ public class Inventory : MonoBehaviour
             slotItems[existingItem.slotID].item = null;
             selectedItem = null;
             selectedSlot = null;
-        }
+        }*/
 
         // Removes Item from Inventory
         if (existingItem != null && !inSlot)
