@@ -21,42 +21,72 @@ public class Abilities : MonoBehaviour
                 if (abilitiesEnabled[i])
                 {
                     selectedAbility = i;
-                    Debug.Log("Ability " + (i + 1) + " selected");
+                    Debug.Log("Using Ability " + (i + 1));
+                    useAbility();
                 }
             }
         }
         if (Input.GetMouseButtonDown(0))
         {
-            Debug.Log("M1");
-            if (!inventoryUI.activeSelf)
-            {
-                Debug.Log("UI Check");
-                Vector3 rayOrigin = transform.position + transform.forward* 10 +transform.up * 2;
-
-                
-                Vector3 rayDirection = -transform.up;
-
-                Ray ray = new Ray(rayOrigin, rayDirection);
-                RaycastHit hit;
-
-                // Check if the ray hits an object
-                if (Physics.Raycast(ray, out hit))
-                {
-                    GameObject obj = new GameObject();
-                    if (selectedAbility == 1 || selectedAbility == 2)
-                    {
-                        obj = Instantiate(abilities[selectedAbility], hit.point + transform.up * 1, Quaternion.identity);
-                    }
-                    else
-                    {
-                        obj = Instantiate(abilities[selectedAbility], hit.point, Quaternion.identity);
-                    }
-                    StartCoroutine(timerCoroutine(obj));
-
-                }
-            }
+            //useAbility();
         }
         
+    }
+
+    public void useAbility()
+    {
+        if (!inventoryUI.activeSelf)
+        {
+            Debug.Log("UI Check");
+            Vector3 rayOrigin = transform.position + transform.forward * 10 + transform.up * 2;
+
+
+            Vector3 rayDirection = -transform.up;
+
+            Ray ray = new Ray(rayOrigin, rayDirection);
+            RaycastHit hit;
+
+            // Check if the ray hits an object
+            if (Physics.Raycast(ray, out hit))
+            {
+                GameObject obj = new GameObject();
+                if (selectedAbility == 1 || selectedAbility == 2)
+                {
+                    obj = Instantiate(abilities[selectedAbility], hit.point + transform.up * 1, Quaternion.identity);
+                }
+                else
+                {
+                    obj = Instantiate(abilities[selectedAbility], hit.point, Quaternion.identity);
+                }
+                StartCoroutine(timerCoroutine(obj));
+
+            }
+        }
+    }
+
+    public void EnableBool1()
+    {
+        abilitiesEnabled[0] = true;
+    }
+
+    public void EnableBool2()
+    {
+        abilitiesEnabled[1] = true;
+    }
+
+    public void EnableBool3()
+    {
+        abilitiesEnabled[2] = true;
+    }
+
+    public void EnableBool4()
+    {
+        abilitiesEnabled[3] = true;
+    }
+
+    public void EnableBool5()
+    {
+        abilitiesEnabled[4] = true;
     }
 
 

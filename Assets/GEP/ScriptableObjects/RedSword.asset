@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c068ed8312ea454883adb15e4c593fb, type: 3}
-  m_Name: Health Pack
+  m_Name: RedSword
   m_EditorClassIdentifier: 
-  itemName: Health Pack
+  itemName: Red Sword
   itemDescription: 
   colour: 0
-  type: 1
-  icon: {fileID: 21300000, guid: 9d7a6b97c75815e419f3145b4990e6e1, type: 3}
-  prefab: {fileID: 642265437455974005, guid: bc3c47200b923774aada08caf37d97a0, type: 3}
+  type: 2
+  icon: {fileID: 21300000, guid: 20f9b7ebabce2a0459a09d5684fa3653, type: 3}
+  prefab: {fileID: 3153628488640418484, guid: 534bae1ac41c1f94ba374c13c2f89963, type: 3}
   quantity: 1

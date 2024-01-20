@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using static UnityEditor.Progress;
+using static UnityEngine.ProBuilder.AutoUnwrapSettings;
 using Text = TMPro.TextMeshProUGUI;
 
 
@@ -109,13 +110,13 @@ public class Inventory : MonoBehaviour
             {
                 items.Remove(existingItem);
             }
-            
+
         }
 
         // Spawn Gameworld Object
         Vector3 spawnPosition = transform.position + transform.forward * 2.0f + transform.up;
         Instantiate(existingItem.item.prefab, spawnPosition, Quaternion.identity);
-        
+
         UpdateInventoryUI();
     }
 
@@ -161,20 +162,66 @@ public class Inventory : MonoBehaviour
                 RemoveItem(selectedItem.item, 1);
             }
         }
+
+        // Adds Item to Model
+        if (selectedSlot.item.type == Type.Shield || selectedSlot.item.type == Type.Sword)
+        {
+            Vector3 spawnPosition = transform.position - transform.up * 100f;
+            GameObject obj = Instantiate(selectedItem.item.prefab, spawnPosition, Quaternion.identity);
+            if (obj.TryGetComponent(out IEquipable equipableObject))
+            {
+                equipableObject.Equip();
+            }
+        }
+
+
         selectedSlot = null;
         selectedItem = null;
         UpdateInventoryUI();
+
+
     }
 
     public void MoveItemFromSlot()
     {
+        
         // Move the item from the selected empty slot back to the inventory
         if (selectedSlot != null && selectedSlot.item != null)
         {
             AddItem(selectedSlot.item, selectedSlot.quantity);
+
+            //Removes item from Model
+            string anchorString = "";
+            bool onModel = false;
+            switch (selectedSlot.item.type)
+            {
+                case Type.Shield:
+                    anchorString = "ShieldHolder";
+                    onModel = true;
+                    break;
+                case Type.Sword:
+                    anchorString = "SwordHolder";
+                    onModel = true;
+                    break;
+            }
+
+            if (onModel)
+            {
+                GameObject Anchor = GameObject.Find(anchorString);
+                Transform objTransform = Anchor.transform.GetChild(0);
+                GameObject obj = objTransform.gameObject;
+                if (obj.TryGetComponent(out IEquipable equipableObject))
+                {
+                    equipableObject.UnEquip();
+                }
+            }
+            
+
             selectedSlot.item = null;
             selectedSlot.quantity = 0;
         }
+
+        
         selectedSlot = null;
         selectedItem = null;
         UpdateInventoryUI();

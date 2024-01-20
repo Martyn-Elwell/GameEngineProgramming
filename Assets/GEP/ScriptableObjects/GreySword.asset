@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c068ed8312ea454883adb15e4c593fb, type: 3}
-  m_Name: Health Pack
+  m_Name: GreySword
   m_EditorClassIdentifier: 
-  itemName: Health Pack
+  itemName: Grey Sword
   itemDescription: 
-  colour: 0
-  type: 1
-  icon: {fileID: 21300000, guid: 9d7a6b97c75815e419f3145b4990e6e1, type: 3}
-  prefab: {fileID: 642265437455974005, guid: bc3c47200b923774aada08caf37d97a0, type: 3}
+  colour: 8
+  type: 2
+  icon: {fileID: 21300000, guid: ceae26b83a85f0349a88eb4a6649299f, type: 3}
+  prefab: {fileID: 8608007470375692966, guid: e1822ae3c3d426d4287d8172acf96f59, type: 3}
   quantity: 1

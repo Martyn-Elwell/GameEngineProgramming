@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6c068ed8312ea454883adb15e4c593fb, type: 3}
-  m_Name: Health Pack
+  m_Name: GreenSword
   m_EditorClassIdentifier: 
-  itemName: Health Pack
+  itemName: Green Sword
   itemDescription: 
-  colour: 0
-  type: 1
-  icon: {fileID: 21300000, guid: 9d7a6b97c75815e419f3145b4990e6e1, type: 3}
-  prefab: {fileID: 642265437455974005, guid: bc3c47200b923774aada08caf37d97a0, type: 3}
+  colour: 1
+  type: 2
+  icon: {fileID: 21300000, guid: d397c6182f31d0e46b5943256c26b08a, type: 3}
+  prefab: {fileID: 1709069814602105001, guid: aaee165b883270c40af6495947d9b0d4, type: 3}
   quantity: 1
