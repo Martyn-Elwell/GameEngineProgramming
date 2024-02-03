@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Green
   itemDescription: 
   colour: 1
-  type: 1
+  type: 0
   icon: {fileID: 21300000, guid: 177df98a6be101a4c842a5d1cbe94a07, type: 3}
   prefab: {fileID: 3443909798428315348, guid: bf6222956315df54692bab1854cd0e10, type: 3}
   quantity: 0
